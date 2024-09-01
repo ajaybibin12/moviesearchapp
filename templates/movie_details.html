@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ movie.title }}</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="static/styles.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/">Movie Search Engine</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/action_movies">Action</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/romantic_movies">Rom-com</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/thriller_movies">Thrillers</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/comedy_movies">Comedy</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/drama_movies">Drama</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <h1 class="text-center mb-4">{{ movie.title }}</h1>
+        <div class="text-center">
+            <img src="{{ movie.poster_url }}" alt="{{ movie.title }} poster" class="img-fluid mb-3" style="max-width: 300px;">
+        </div>
+        <p><strong>Genres:</strong> {{ ', '.join(movie.genres) }}</p>
+        <p><strong>Plot:</strong> {{ movie.plot }}</p>
+        <div class="text-center mt-4">
+            <a href="/" class="btn btn-primary">Search Again</a>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
